@@ -5,6 +5,7 @@ import { db, remotedb } from '../dbconfig'
 class Message extends React.Component {  
     render() {
         const node = ReactDOM.findDOMNode(this);
+
         if (node instanceof HTMLElement) {
             const input= node.querySelector('.message');
             console.log(input);
@@ -16,14 +17,17 @@ class Message extends React.Component {
             "date": Date,
             "user":"jack"
           };
+        
           remotedb.put(message);
           db.put(message);
-
 
           db.get('m1').then(function (doc) {
             console.log(doc);
           });
-
+          db.get('m1').then(function (doc) {
+            console.log(doc);
+          });
+          
         return (
             <div className="message">
             </div>
