@@ -2,6 +2,7 @@ import React from 'react'
 import { remotedb } from '../dbconfig'
 
 class MessageList extends React.Component {
+    
     constructor(){
         super()
         this.state={
@@ -11,7 +12,7 @@ class MessageList extends React.Component {
 
     
     render() {
-
+        //Fetch all Messages
         remotedb.allDocs({
             include_docs: true,
             attachments: true,

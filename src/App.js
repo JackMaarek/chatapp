@@ -15,13 +15,6 @@ class App extends React.Component {
         }
     }
 
-    newMessage(message){
-        this.setState({
-        messages: [...this.state.messages, message]
-        });
-        console.log('this'+ message);
-    }
-
     render() {
       console.log(remotedb);
         return (

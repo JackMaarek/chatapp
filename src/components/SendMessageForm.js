@@ -9,27 +9,32 @@ class SendMessageForm extends React.Component {
         this.state = {
           value: ''
         };
-
+        //Bind values on change && submit
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         
       }
     
+
+        //Handle state of the input
       handleChange(event) {
-        console.log(event.target.value)
-      
         this.setState({ 
           value: event.target.value}
           );}
 
+
+        //Handle onSubmit of the input
       handleSubmit(event){
         event.preventDefault()
-        console.log(this.state.value);
+
+        //Data
         var message = {
           "content": {value: this.state.value},
           "date": Date(),
           "user":"jacko"
         };
+        
+        //Post data to DB
       remotedb.post(message);
       this.setState({
        value: ''
