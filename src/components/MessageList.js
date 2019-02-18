@@ -11,12 +11,16 @@ class MessageList extends React.Component {
 
     
     render() {
-        
+
         remotedb.allDocs({
             include_docs: true,
-            attachments: true
+            attachments: true,
           }).then(function (result) {
-            console.log(result.rows);
+            console.log(result);
+
+            result.forEach(row => {
+                console.log(row);    
+            });
 
             this.setState({
                 messages: [...this.state.messages]

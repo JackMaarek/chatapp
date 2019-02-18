@@ -3,37 +3,44 @@ import { remotedb } from '../dbconfig'
 
 class SendMessageForm extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {value: ''};
-        this.handleChange = this.handleChange.bind(this);
+    constructor() {
+        super();
 
+        this.state = {
+          value: ''
+        };
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        
       }
     
       handleChange(event) {
         console.log(event.target.value)
-      }
-    
-    render() {
-    
+      
+        this.setState({ 
+          value: event.target.value}
+          );}
+
+      handleSubmit(event){
+        event.preventDefault()
+        console.log(this.state.value);
         var message = {
-            "_id": "m2",
-            "content": this.message,
-            "date": "date",
-            "user":"jacko"
-          };
-        
-          remotedb.put(message);
-    
+          "content": {value: this.state.value},
+          "date": Date,
+          "user":"jacko"
+        };
+      remotedb.post(message);
+      }
+
+    render() {    
         return (
-            <form className="send-message-form" name='message'>
+            <form className="send-message-form" name='message' onSubmit={this.handleSubmit}>
                 <input
                     onChange={this.handleChange}
                     value={this.state.value}
                     placeholder="Send Your Message"
                     type="text" 
-                     
-                    
                     />
             </form>
         )
