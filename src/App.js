@@ -7,6 +7,20 @@ import { remotedb } from "./dbconfig";
 
 class App extends React.Component {
 
+    constructor(){
+        super()
+        this.state = {
+
+            messages : []
+        }
+    }
+
+    newMessage(message){
+        this.setState({
+        messages: [...this.state.messages, message]
+        });
+        console.log('this'+ message);
+    }
 
     render() {
       console.log(remotedb);

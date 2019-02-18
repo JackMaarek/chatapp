@@ -27,10 +27,13 @@ class SendMessageForm extends React.Component {
         console.log(this.state.value);
         var message = {
           "content": {value: this.state.value},
-          "date": Date,
+          "date": Date(),
           "user":"jacko"
         };
       remotedb.post(message);
+      this.setState({
+       value: ''
+     });
       }
 
     render() {    
