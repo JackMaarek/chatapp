@@ -33,12 +33,12 @@ class SendMessageForm extends React.Component {
           "date": Date(),
           "user":"jacko"
         };
-        
+
         //Post data to DB
       remotedb.post(message);
       this.setState({
        value: ''
-     });
+      });
       }
 
     render() {    
