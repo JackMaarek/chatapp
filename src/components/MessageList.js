@@ -1,12 +1,31 @@
 import React from 'react'
-import Message from './Message';
-import { db, remotedb } from '../dbconfig'
+import { remotedb } from '../dbconfig'
 
 class MessageList extends React.Component {
+    constructor(){
+        super()
+        this.state={
+            messages:[]
+        }
+    }
+
+    
     render() {
-        remotedb.get('m1').then(function (doc) {
-            console.log(doc);
+        
+        remotedb.allDocs({
+            include_docs: true,
+            attachments: true
+          }).then(function (result) {
+            console.log(result.rows);
+
+            this.setState({
+                messages: [...this.state.messages]
+            })
+
+          }).catch(function (err) {
+            console.log(err);
           });
+
         return (
             <div className="message-list">
                 <div className="help-text">MessageList</div>
