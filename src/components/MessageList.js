@@ -17,7 +17,6 @@ class MessageList extends React.Component {
           attachments: true,
         }).then(function (res) {
           docs = res.rows.map(function (row) {return row.doc.content});
-          console.log(docs)
           self.setState({messages: docs.map(item => {return item.value})});
         }).catch(function (err) {
           console.log(err);
@@ -32,7 +31,6 @@ class MessageList extends React.Component {
             attachments: true,
           }).then(function (res) {
             docs = res.rows.map(function (row) {return row.doc.content});
-            console.log(docs)
             self.setState({messages: docs.map(item => {return item.value})});
           }).catch(function (err) {
             console.log(err);

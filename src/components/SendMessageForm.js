@@ -35,15 +35,15 @@ class SendMessageForm extends React.Component {
           "user":"jacko"
         };
 
-        if({value: this.state.value}.value!==''){
-          console.log({value: this.state.value}.value);
-        //Post data to DB
-        db.post(message);
-        db.sync(remotedb);
-        this.setState({
-        value: ''
-        });
-        }
+          if({value: this.state.value}.value!==''){
+            console.log({value: this.state.value}.value);
+            //Post data to DB
+            db.post(message);
+            db.sync(remotedb);
+            this.setState({
+            value: ''
+            });
+          }
         }
 
     render() {    

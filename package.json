@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@pusher/chatkit-client": "^1.3.2",
+    "bcrypt": "^3.0.4",
     "chatkit": "0.0.1-security",
     "pouchdb": "^7.0.0",
     "react": "^16.8.1",
