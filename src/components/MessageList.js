@@ -3,35 +3,39 @@ import { remotedb } from '../dbconfig'
 
 class MessageList extends React.Component {
   
-    constructor(){
-        super()
+    constructor(props){
+      super(props)
         this.state={
-            messages:[]
+            messages:[],
+            docs:[]
         }
+        let docs=[];
+        var self = this;
+        remotedb.allDocs({
+          include_docs: true,
+          attachments: true,
+        }).then(function (res) {
+          docs = res.rows.map(function (row) {return row.doc.content});
+          console.log(docs)
+          self.setState({messages: docs.map(item => {return item.value})});
+        }).catch(function (err) {
+          console.log(err);
+        });
     }
-    render() {  
-       //Fetch all Messages
-       remotedb.allDocs({
-        include_docs: true,
-        attachments: true,
-      }).then(function (res) {
+    render() { 
 
-        console.log(res);
-        var docs=[];
-        docs = res.rows.map(function (row) { return row.doc.content.value; });
-         console.log(docs);
-        this.setState({
-            messages: [...this.state.messages]
-        })
-      }).catch(function (err) {
-        console.log(err);
-      });  
+      let listItem 
+           //Fetch all Messages
+      listItem = this.state.messages.map((message, index)=>{
+        return <ul key={index}><li>{message}</li></ul>
+      })
+  
         return (
             <div className="message-list">
                 <div className="help-text">MessageList</div>
-    
-                   <li>{this.value}</li>
-
+                <ul>
+                  {listItem}
+                </ul>
             </div>
         )
     }
