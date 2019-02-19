@@ -1,7 +1,7 @@
 import  PouchDB   from '../node_modules/pouchdb';
 
 var db = new PouchDB('chatapp');
-var remotedb = new PouchDB('http://chatApp:ryzlathluli24@localhost:5984/chatapp');
+var remotedb = new PouchDB('http://chatapp:ryzlathluli24@localhost:5984/chatapp');
 
 db.info().then(function (info) {
     console.log(info);

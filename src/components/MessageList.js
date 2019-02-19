@@ -12,10 +12,6 @@ class MessageList extends React.Component {
         let docs=[];
         var self = this;
 
-        db.sync(remotedb, {
-          live: true
-        }).on('change', function (change) {
-          // yo, something changed!
         remotedb.allDocs({
           include_docs: true,
           attachments: true,
@@ -26,10 +22,30 @@ class MessageList extends React.Component {
         }).catch(function (err) {
           console.log(err);
         });
+
+        remotedb.sync(db, {
+          live: true
+        }).on('change', function (change) {
+          // yo, something changed!
+          remotedb.allDocs({
+            include_docs: true,
+            attachments: true,
+          }).then(function (res) {
+            docs = res.rows.map(function (row) {return row.doc.content});
+            console.log(docs)
+            self.setState({messages: docs.map(item => {return item.value})});
+          }).catch(function (err) {
+            console.log(err);
+          });
       }).on('error', function (err) {
         // yo, we got an error! (maybe the user went offline?)
+        console.log('errooor')
       });
 
+      if(docs.count>25){
+        remotedb.remove(docs[25]);
+      }
+      
     }
     render() { 
 

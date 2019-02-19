@@ -1,5 +1,5 @@
 import React from 'react'
-import { remotedb } from '../dbconfig'
+import { db, remotedb } from '../dbconfig'
 
 class SendMessageForm extends React.Component {
 
@@ -29,17 +29,22 @@ class SendMessageForm extends React.Component {
 
         //Data
         var message = {
+          "id": 'message',
           "content": {value: this.state.value},
           "date": Date(),
           "user":"jacko"
         };
 
+        if({value: this.state.value}.value!==''){
+          console.log({value: this.state.value}.value);
         //Post data to DB
-      remotedb.post(message);
-      this.setState({
-       value: ''
-      });
-      }
+        db.post(message);
+        db.sync(remotedb);
+        this.setState({
+        value: ''
+        });
+        }
+        }
 
     render() {    
         return (
