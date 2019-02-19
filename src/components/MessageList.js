@@ -1,5 +1,5 @@
 import React from 'react'
-import { remotedb } from '../dbconfig'
+import { db, remotedb } from '../dbconfig'
 
 class MessageList extends React.Component {
   
@@ -11,6 +11,11 @@ class MessageList extends React.Component {
         }
         let docs=[];
         var self = this;
+
+        db.sync(remotedb, {
+          live: true
+        }).on('change', function (change) {
+          // yo, something changed!
         remotedb.allDocs({
           include_docs: true,
           attachments: true,
@@ -21,13 +26,17 @@ class MessageList extends React.Component {
         }).catch(function (err) {
           console.log(err);
         });
+      }).on('error', function (err) {
+        // yo, we got an error! (maybe the user went offline?)
+      });
+
     }
     render() { 
 
       let listItem 
            //Fetch all Messages
       listItem = this.state.messages.map((message, index)=>{
-        return <ul key={index}><li>{message}</li></ul>
+        return <ul key={index}><li className="messageList">{message}</li></ul>
       })
   
         return (
