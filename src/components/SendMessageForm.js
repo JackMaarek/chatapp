@@ -12,9 +12,7 @@ class SendMessageForm extends React.Component {
         //Bind values on change && submit
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        
       }
-    
 
         //Handle state of the input
       handleChange(event) {
@@ -25,13 +23,32 @@ class SendMessageForm extends React.Component {
 
         //Handle onSubmit of the input
       handleSubmit(event){
-        event.preventDefault()
+        event.preventDefault();
+
+        let mydate = ()=>{
+          var creation = new Date();
+          var dd = creation.getDate();
+          var mm = creation.getMonth() + 1; 
+          var yyyy = creation.getFullYear();
+          
+          if (dd < 10) {
+            dd = '0' + dd;
+          }
+          
+          if (mm < 10) {
+            mm = '0' + mm;
+          }
+          
+          creation = dd + '/' + mm + '/' + yyyy ;
+          console.log(creation)
+          return creation
+        }
 
         //Data
         var message = {
           "id": 'message',
           "content": {value: this.state.value},
-          "date": Date(),
+          "date": mydate(),
           "user":"jacko"
         };
 
