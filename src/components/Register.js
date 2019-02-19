@@ -12,6 +12,7 @@ class Register extends React.Component {
 
           this.handleEmailChange = this.handleEmailChange.bind(this);
           this.handlePasswordChange = this.handlePasswordChange.bind(this)
+          this.handleConfirmPasswordChange = this.handleConfirmPasswordChange.bind(this)
         }
         
 
@@ -48,7 +49,7 @@ class Register extends React.Component {
                 value={this.state.value}
                 type='password' 
                 name="pwd" 
-                placeholder="password"
+                placeholder="Password"
                 />
 
                 <label htmlFor="pwd-confirm">Confirm Password</label>
@@ -57,7 +58,7 @@ class Register extends React.Component {
                 value={this.state.value}
                 type='password' 
                 name="pwd-confirm" 
-                placeholder="password"
+                placeholder="Confifm Password"
                 />
 
             </form>
