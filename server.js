@@ -1,23 +1,27 @@
 require('dotenv').config()
 
 const express = require('express');
-const bodyParser = require('body-parser')
-const dbConnect = require('./services/mongodb.serv')
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const dbConnect = require('./services/mongodb.serv');
 const path = require('path');
-const mainRouter = require('./routes/main.router')
+const mainRouter = require('./routes/main.router');
 const app = express();
-const cors = require('cors')
+const cors = require('cors');
 app.use(express.static(path.join(__dirname, 'build')));
 
-app.use(cors( ))
+app.use(cors());
 
 app.get('/ping', function (req, res) {
  return res.send('pong');
 });
 
-//=> Body-parser
+//=> Body parser
 app.use(bodyParser.json({limit: '10mb'}));
 app.use(bodyParser.urlencoded({ extended: true }));
+
+//=> Cookie parser
+app.use(cookieParser());
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
