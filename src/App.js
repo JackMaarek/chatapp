@@ -6,8 +6,6 @@ import MessageList from './components/MessageList';
 import SendMessageForm from './components/SendMessageForm';
 import RoomList from './components/RoomList';
 import NewRoomForm from './components/NewRoomForm';
-import Login from './components/Login';
-import Register from './components/Register';
 import IdentificationSignin from './components/Identification/IdentificationSignin/IdentificationSignin';
 import IdentificationSignup from './components/Identification/IdentificationSignup/IdentificationSignup';
 import Dashboard from './components/Dashboard/Dashboard';
@@ -33,14 +31,6 @@ class App extends React.Component {
                         <Route path='/' component={Dashboard} />
                     </Switch>
                 </Router>
-                {/* <RoomList />
-                <MessageList />
-                <div className="modal">
-                <Login />
-                <Register />
-                </div>
-                <SendMessageForm />
-                <NewRoomForm /> */}
             </div>
             
         );
