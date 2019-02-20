@@ -8,30 +8,21 @@ class Register extends React.Component {
         super(props)
           this.state={
               email:'',
-              password:'',
-              confirmPassword:''
+              password:''
           }
 
           this.handleEmailChange = this.handleEmailChange.bind(this);
           this.handlePasswordChange = this.handlePasswordChange.bind(this);
-          this.handleConfirmPasswordChange = this.handleConfirmPasswordChange.bind(this);
           this.handleSubmit = this.handleSubmit.bind(this);
         }
         
 
         handleEmailChange (evt) {
             this.setState({ email: evt.target.value });
-            console.log(({ email: evt.target.value }));
           }
           
           handlePasswordChange (evt) {
-            this.setState({ password: evt.target.value });
-            console.log({ password: evt.target.value });
-            
-          }
-          handleConfirmPasswordChange (evt) {
-            this.setState({ confirmPassword: evt.target.value });
-            console.log({ confirmpassword: evt.target.value });
+            this.setState({ password: evt.target.value });            
           }
 
         handleSubmit(evt) {
@@ -39,15 +30,8 @@ class Register extends React.Component {
           evt.preventDefault();
 
             this.setState({ email: this.state.email });
-            console.log({ email: this.state.email });
             this.setState({ password: this.state.password });
-            console.log({ password: this.state.password});
-            this.setState({ confirmPassword: this.state.confirmPassword});
-            console.log({ confirmPassword: this.state.confirmPassword});
-            register({email: this.state.email, password: this.state.password, confirmPassword: this.state.confirmPassword});
-            console.log({email: this.state.email, password: this.state.password, confirmPassword: this.state.confirmPassword});
-            
-
+            register({email: this.state.email, password: this.state.password });
           }
 
     render() {
@@ -72,14 +56,14 @@ class Register extends React.Component {
                 placeholder="Password"
                 />
 
-                <label htmlFor="pwd-confirm">Confirm Password</label>
+                {/* <label htmlFor="pwd-confirm">Confirm Password</label>
                 <input 
                 onChange={this.handleConfirmPasswordChange}
                 value={this.state.value}
                 type='password' 
                 name="pwd-confirm" 
                 placeholder="Confirm Password"
-                />
+                /> */}
                 <button type="submit">Register</button>
 
             </form>
