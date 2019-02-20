@@ -50,7 +50,7 @@ Méthodes CRUD
                     if( !validPassword ) reject('Password not valid')
                     else{
                         // Set cookie
-                        res.cookie( 'hetic-blog', user.generateJwt() )
+                        res.cookie( 'hetic-chat', user.generateJwt() )
 
                         return resolve(user);
                     };

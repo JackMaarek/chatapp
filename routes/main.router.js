@@ -9,8 +9,15 @@ Imports
     const UserRouterClass = require('./user/user.routes');
 //
 
+
+//Passport
+
+const passport = require('passport');
+const { setAuthentication } = require('../services/authentication');
+setAuthentication(passport);
+
 /* 
-Definition des router
+Routers Definition
 */  
     // Parent
     const mainRouter = Router();
@@ -22,7 +29,7 @@ Definition des router
 //
 
 /* 
-Définition des routes
+Routes Definition
 */
     mainRouter.use( '/api', apiRouter );
     apiRouter.use( '/auth', authRouter.init() );
