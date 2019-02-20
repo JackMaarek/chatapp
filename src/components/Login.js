@@ -5,7 +5,7 @@ class Login extends React.Component {
     
     constructor(props){
         super(props)
-        
+
           this.state={
               email:'',
               password:''
@@ -24,8 +24,8 @@ class Login extends React.Component {
           handlePasswordChange (evt) {
             this.setState({ password: evt.target.value });
             console.log({ password: evt.target.value });
-            
           }
+          
 
     render() {
         return (

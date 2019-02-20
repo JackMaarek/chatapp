@@ -30,6 +30,10 @@ class SendMessageForm extends React.Component {
           var dd = creation.getDate();
           var mm = creation.getMonth() + 1; 
           var yyyy = creation.getFullYear();
+          var h = creation.getHours();
+          var mn = creation.getMinutes();
+          var s = creation.getSeconds();
+          var ms = creation.getMilliseconds();
           
           if (dd < 10) {
             dd = '0' + dd;
@@ -39,7 +43,7 @@ class SendMessageForm extends React.Component {
             mm = '0' + mm;
           }
           
-          creation = dd + '/' + mm + '/' + yyyy ;
+          creation =  h + 'h ' + mn + 'mn ' + s + 's ' + ms + 'ms ' + dd + '/' + mm + '/' + yyyy ;
           console.log(creation)
           return creation
         }
@@ -56,7 +60,6 @@ class SendMessageForm extends React.Component {
             console.log({value: this.state.value}.value);
             //Post data to DB
             db.post(message);
-            db.sync(remotedb);
             this.setState({
             value: ''
             });
