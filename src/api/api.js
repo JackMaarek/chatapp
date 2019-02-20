@@ -11,3 +11,14 @@ export function register(userData){
         console.log(error);
     })
 }
+
+export function login(userData){
+    console.log(userData)
+    axios.post(`${api}/api/auth/login`, userData)
+    .then(function (response) {
+        console.log(response);
+      })
+    .catch(function (error) {
+        console.log(error);
+    })
+}
