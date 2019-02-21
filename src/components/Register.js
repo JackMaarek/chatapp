@@ -13,6 +13,7 @@ class Register extends React.Component {
 
           this.handleEmailChange = this.handleEmailChange.bind(this);
           this.handlePasswordChange = this.handlePasswordChange.bind(this);
+          this.handleNameChange = this.handleNameChange.bind(this);
           this.handleSubmit = this.handleSubmit.bind(this);
         }
         
@@ -36,14 +37,14 @@ class Register extends React.Component {
             this.setState({ email: this.state.email });
             this.setState({ password: this.state.password });
             this.setState({ name: this.state.name});
-            register({email: this.state.email, password: this.state.password });
+            register({email: this.state.email, password: this.state.password, name: this.state.name });
           }
 
     render() {
         return (
             <div className="LoginForm">
             <form className="send-login-form" onSubmit={this.handleSubmit}>
-            
+
             <label htmlFor="name">Username</label>
             <input 
                 onChange={this.handleNameChange}
@@ -53,25 +54,25 @@ class Register extends React.Component {
                 placeholder="Username"
                 />
 
-                <label htmlFor="email">Email</label>
-                <input 
-                onChange={this.handleEmailChange}
-                value={this.state.value}
-                type='email' 
-                name="email" 
-                placeholder="email"
-                />
+            <label htmlFor="email">Email</label>
+            <input 
+            onChange={this.handleEmailChange}
+            value={this.state.value}
+            type='email' 
+            name="email" 
+            placeholder="email"
+            />
 
-                <label htmlFor="pwd">Password</label>
-                <input 
-                onChange={this.handlePasswordChange}
-                value={this.state.value}
-                type='password' 
-                name="pwd" 
-                placeholder="Password"
-                />
-                
-                <button type="submit">Register</button>
+            <label htmlFor="pwd">Password</label>
+            <input 
+            onChange={this.handlePasswordChange}
+            value={this.state.value}
+            type='password' 
+            name="pwd" 
+            placeholder="Password"
+            />
+            
+            <button type="submit">Register</button>
 
             </form>
             </div>
