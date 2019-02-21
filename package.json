@@ -14,20 +14,27 @@
     "jsonwebtoken": "^8.5.0",
     "jwt-decode": "^2.2.0",
     "mongoose": "^5.4.14",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.10",
+    "npm-watch": "^0.6.0",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
-    "node-sass": "^4.11.0",
     "pouchdb": "^7.0.0",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.5"
   },
+  "watch": {
+    "build": "react-scripts build"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "watch": "npm-watch",
+    "server": "nodemon node server.js"
   },
   "eslintConfig": {
     "extends": "react-app"
