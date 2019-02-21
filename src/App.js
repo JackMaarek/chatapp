@@ -5,6 +5,7 @@ import RoomList from './components/RoomList';
 import NewRoomForm from './components/NewRoomForm';
 import Login from './components/Login';
 import Register from './components/Register';
+import Logout from './components/Logout'
 import { remotedb } from "./dbconfig";
 
 class App extends React.Component {
@@ -17,11 +18,7 @@ class App extends React.Component {
         }
     
     }
-    
-    handleLogout(event) {
-        event.preventDefault();
-        console.log('JOOJ');
-      }
+
 
     render() {
 
@@ -38,7 +35,7 @@ class App extends React.Component {
                 </div>
                 <SendMessageForm />
                 <NewRoomForm />
-                <button onClick={this.handleLogout.bind(this)}>Logout</button>
+                <Logout/>         
             </div>
             
         );
