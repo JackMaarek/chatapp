@@ -1,5 +1,4 @@
 import React from 'react'
-import { db, remotedb } from '../dbconfig'
 import {register} from '../api/api'
 
 class Register extends React.Component {  

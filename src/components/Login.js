@@ -1,6 +1,5 @@
 import React from 'react'
-import { db, remotedb } from '../dbconfig'
-import {register} from '../api/api'
+import { login } from '../api/api'
 
 class Login extends React.Component {  
     
@@ -33,7 +32,7 @@ class Login extends React.Component {
             evt.preventDefault();
             this.setState({ email: this.state.email });
             this.setState({ password: this.state.password });
-            register({email: this.state.email, password: this.state.password });
+            login({email: this.state.email, password: this.state.password });
             }
 
 
