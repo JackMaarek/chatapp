@@ -39,7 +39,7 @@ class App extends React.Component {
                     <Switch>
                         <Route path='/signin' component={IdentificationSignin} />
                         <Route path='/signup' component={IdentificationSignup} />
-                        <Route path='/' component={Dashboard} />
+                        <Route path='/' render={() => <Dashboard messages={this.state.messages} />} />
                     </Switch>
                 </Router>
             </div>
