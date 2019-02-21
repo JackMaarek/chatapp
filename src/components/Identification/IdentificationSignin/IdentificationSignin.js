@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { login } from '../../../api/api'
 
 import Identification from '../Indentification'
 
@@ -14,6 +15,7 @@ class IdentificationSignin extends React.Component {
 
           this.handleEmailChange = this.handleEmailChange.bind(this);
           this.handlePasswordChange = this.handlePasswordChange.bind(this)
+          this.handleSubmit = this.handleSubmit.bind(this);
         }
         
 
@@ -28,10 +30,18 @@ class IdentificationSignin extends React.Component {
             
           }
 
+          handleSubmit(evt) {
+              
+            evt.preventDefault();
+            this.setState({ email: this.state.email });
+            this.setState({ password: this.state.password });
+            login({email: this.state.email, password: this.state.password });
+        }
+
     render() {
         return (
             <Identification title='SE CONNECTER'>
-                <form className="send-login-form">
+                <form className="send-login-form" onSubmit={this.handleSubmit}>
                     <label htmlFor="email">EMAIL</label>
                     <input 
                     onChange={this.handleEmailChange}
