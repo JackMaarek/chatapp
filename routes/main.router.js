@@ -6,7 +6,7 @@ Imports
 
     // Inner
     const AuthRouterClass = require('./auth/auth.routes');
-    const UserRouterClass = require('./user/user.routes');
+    const ChatRoomRouterClass = require('./chatroom/chatroom.routes');
 //
 
 
@@ -25,7 +25,7 @@ Routers Definition
 
     // Child
     const authRouter = new AuthRouterClass();
-    const userRouter = new UserRouterClass();
+    const chatRoomRouter = new ChatRoomRouterClass();
 //
 
 /* 
@@ -33,7 +33,7 @@ Routes Definition
 */
     mainRouter.use( '/api', apiRouter );
     apiRouter.use( '/auth', authRouter.init() );
-    apiRouter.use( '/user', userRouter.init() );
+    apiRouter.use( '/chatroom', chatRoomRouter.init() );
 //
 
 /* 

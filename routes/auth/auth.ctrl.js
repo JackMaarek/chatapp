@@ -58,6 +58,13 @@ Méthodes CRUD
             });
         });
     };
+
+    const logout = (res) => {
+        return new Promise((resolve,reject)=>{
+            res.clearCookie('hetic-chat')
+            return resolve();
+        })
+    };
 //
 
 /* 
@@ -65,6 +72,7 @@ Exports
 */
     module.exports = {
         register,
-        login
+        login,
+        logout
     }
 //

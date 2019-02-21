@@ -7,7 +7,7 @@ Import & config
 
     // Inner
     const checkFields = require('../../services/request.checker');
-    const { register, login } = require('./auth.ctrl');
+    const { register, login, logout } = require('./auth.ctrl');
 //
 
 /* 
@@ -17,7 +17,7 @@ Definition
         constructor(){}
 
         routes(){
-            // Update
+            // Create a User
             authRouter.post( '/register', (req, res) => {
                 // Error: no body present
                 if (typeof req.body === 'undefined' || req.body === null) { 
@@ -37,7 +37,7 @@ Definition
                 }
             })
 
-            // Delete
+            // User Login
             authRouter.post( '/login', (req, res) => {
                 // Error: no body present
                 if (typeof req.body === 'undefined' || req.body === null) { 
@@ -55,6 +55,12 @@ Definition
                     .then( apiResponse => res.json( { msg: 'User logged', data: apiResponse } ) )
                     .catch(apiResponse => res.json( { msg: 'User not logged', data: apiResponse } ) );
                 }
+            })
+
+            authRouter.post('/logout', (req, res)=> {
+                logout(res)
+                .then(apiResponse => res.json( { msg: 'Cookie deleted' } ) )
+                .catch(apiResponse => res.json( { msg: 'Cookie not deleted' } ) );
             })
         }
 
