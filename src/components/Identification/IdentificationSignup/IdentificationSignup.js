@@ -9,12 +9,14 @@ class IdentificationSignup extends React.Component {
         super(props)
           this.state={
               email:'',
-              password:''
+              password:'',
+              username: ''
           }
 
           this.handleEmailChange = this.handleEmailChange.bind(this);
           this.handlePasswordChange = this.handlePasswordChange.bind(this)
           this.handleConfirmPasswordChange = this.handleConfirmPasswordChange.bind(this)
+          this.handleUserNameChange = this.handleUserNameChange.bind(this)
         }
         
 
@@ -22,12 +24,17 @@ class IdentificationSignup extends React.Component {
             this.setState({ email: evt.target.value });
             console.log(({ email: evt.target.value }));
           }
+
+          handleUserNameChange (evt) {
+            this.setState({ username: evt.target.value });
+            console.log(({ username: evt.target.value }));
+          }
           
           handlePasswordChange (evt) {
             this.setState({ password: evt.target.value });
             console.log({ password: evt.target.value });
-            
           }
+
           handleConfirmPasswordChange (evt) {
             console.log({ confirmPassword: evt.target.value });
           }
@@ -43,6 +50,15 @@ class IdentificationSignup extends React.Component {
                     type='email' 
                     name="email" 
                     placeholder="Email"
+                  />
+
+                  <label htmlFor="username">Nom d'utilisateur</label>
+                  <input 
+                    onChange={this.handleUusernameChange}
+                    value={this.state.value}
+                    type='username' 
+                    name="username" 
+                    placeholder="Nom d'utilisateur"
                   />
 
                   <label htmlFor="pwd">Password</label>
