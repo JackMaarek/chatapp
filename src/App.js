@@ -1,6 +1,6 @@
 import React from 'react';
 import { remotedb } from "./dbconfig";
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 
 import MessageList from './components/MessageList';
 import SendMessageForm from './components/SendMessageForm';
@@ -26,7 +26,7 @@ class App extends React.Component {
       console.log(remotedb);
         return (
             <div className="app">
-                <RoomList />
+                {/* <RoomList />
                 <MessageList />
                 <div className="modal">
                 <Login />
@@ -34,7 +34,7 @@ class App extends React.Component {
                 </div>
                 <SendMessageForm />
                 <NewRoomForm />
-                <Logout/>         
+                <Logout/>          */}
                 <Router>
                     <Switch>
                         <Route path='/signin' component={IdentificationSignin} />
