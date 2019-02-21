@@ -5,6 +5,8 @@ class SendMessageForm extends React.Component {
 
     constructor() {
         super();
+        var userCookie = document.cookie
+        console.log(userCookie);
 
         this.state = {
           value: ''
@@ -24,6 +26,7 @@ class SendMessageForm extends React.Component {
         //Handle onSubmit of the input
       handleSubmit(event){
         event.preventDefault();
+      
 
         let mydate = ()=>{
           var creation = new Date();

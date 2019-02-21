@@ -7,7 +7,8 @@ class Register extends React.Component {
         super(props)
           this.state={
               email:'',
-              password:''
+              password:'',
+              name:''
           }
 
           this.handleEmailChange = this.handleEmailChange.bind(this);
@@ -24,12 +25,17 @@ class Register extends React.Component {
             this.setState({ password: evt.target.value });            
           }
 
+          handleNameChange (evt) {
+            this.setState({ name: evt.target.value });            
+          }
+
         handleSubmit(evt) {
 
           evt.preventDefault();
 
             this.setState({ email: this.state.email });
             this.setState({ password: this.state.password });
+            this.setState({ name: this.state.name});
             register({email: this.state.email, password: this.state.password });
           }
 
@@ -37,6 +43,16 @@ class Register extends React.Component {
         return (
             <div className="LoginForm">
             <form className="send-login-form" onSubmit={this.handleSubmit}>
+            
+            <label htmlFor="name">Username</label>
+            <input 
+                onChange={this.handleNameChange}
+                value={this.state.value}
+                type='name' 
+                name="name" 
+                placeholder="Username"
+                />
+
                 <label htmlFor="email">Email</label>
                 <input 
                 onChange={this.handleEmailChange}
@@ -54,15 +70,7 @@ class Register extends React.Component {
                 name="pwd" 
                 placeholder="Password"
                 />
-
-                {/* <label htmlFor="pwd-confirm">Confirm Password</label>
-                <input 
-                onChange={this.handleConfirmPasswordChange}
-                value={this.state.value}
-                type='password' 
-                name="pwd-confirm" 
-                placeholder="Confirm Password"
-                /> */}
+                
                 <button type="submit">Register</button>
 
             </form>
