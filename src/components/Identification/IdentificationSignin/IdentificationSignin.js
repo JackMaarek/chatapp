@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 import Identification from '../Indentification'
 
@@ -50,6 +51,7 @@ class IdentificationSignin extends React.Component {
                     />
 
                     <button type="submit">CONNEXION</button>
+                    <p className='identification__text'>Pas encore de compte ? <Link to='signup'>Créer mon compte</Link></p>
 
                 </form>
             </Identification>
