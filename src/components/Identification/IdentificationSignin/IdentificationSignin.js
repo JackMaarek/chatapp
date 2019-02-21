@@ -38,7 +38,7 @@ class IdentificationSignin extends React.Component {
                     value={this.state.value}
                     type='email' 
                     name="email" 
-                    placeholder="email"
+                    placeholder="Email"
                     />
 
                     <label htmlFor="pwd">MOT DE PASSE</label>
@@ -47,7 +47,7 @@ class IdentificationSignin extends React.Component {
                     value={this.state.value}
                     type='password' 
                     name="pwd" 
-                    placeholder="password"
+                    placeholder="Mot de passe"
                     />
 
                     <button type="submit">CONNEXION</button>
