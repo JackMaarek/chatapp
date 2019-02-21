@@ -26,7 +26,7 @@ Definition
                 }
                 
                 // Check fields in the body
-                const { ok, extra, miss } = checkFields( [ 'name', 'email', 'password' ], req.body )
+                const { ok, extra, miss } = checkFields( ['email', 'password', 'name' ], req.body )
 
                 //=> Error: bad fields provided
                 if( !ok ) res.json( { msg: 'Bad fields provided', data: { miss: miss, extra: extra } } )

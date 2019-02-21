@@ -13,7 +13,7 @@ class Register extends React.Component {
 
           this.handleEmailChange = this.handleEmailChange.bind(this);
           this.handlePasswordChange = this.handlePasswordChange.bind(this);
-          this.handleNameChange = this.handleNameChange.bind(this);
+          this.handleNameChange = this.handlePasswordChange.bind(this);
           this.handleSubmit = this.handleSubmit.bind(this);
         }
         
