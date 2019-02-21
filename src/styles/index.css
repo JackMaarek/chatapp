@@ -1,0 +1,11 @@
+@import 'reset.scss';
+@import 'variables.scss';
+
+body {
+  font-family: 'Work Sans', sans-serif;
+}
+
+@import './../components/Identification/Identification.scss';
+
+@import './../components/Dashboard/Dashboard.scss';
+@import './../components/Dashboard/Sidebar/Sidebar.scss';
