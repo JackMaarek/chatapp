@@ -39,11 +39,6 @@ class Register extends React.Component {
             register({email: this.state.email, password: this.state.password, name: this.state.name });
           }
 
-          handleLogout(event) {
-            event.preventDefault();
-            console.log('JOOJ');
-          }
-
     render() {
         return (
             <div className="LoginForm">
@@ -77,9 +72,6 @@ class Register extends React.Component {
             />
             
             <button type="submit">Register</button>
-
-            <button onClick={this.handleLogout.bind(this)}>Logout</button>
-
             </form>
             </div>
         )

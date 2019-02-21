@@ -15,9 +15,18 @@ class App extends React.Component {
 
             messages : []
         }
+    
     }
+    
+    handleLogout(event) {
+        event.preventDefault();
+        console.log('JOOJ');
+      }
 
     render() {
+
+        
+
       console.log(remotedb);
         return (
             <div className="app">
@@ -29,6 +38,7 @@ class App extends React.Component {
                 </div>
                 <SendMessageForm />
                 <NewRoomForm />
+                <button onClick={this.handleLogout.bind(this)}>Logout</button>
             </div>
             
         );
