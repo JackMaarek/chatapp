@@ -61,6 +61,7 @@ class SendMessageForm extends React.Component {
         //Data
         var message = {
           "id": 'message',
+          "name": {userCookie: jwt_decode(subUser)}.userCookie.name,
           "content": {value: this.state.value},
           "date": mydate(),
           "user":{userCookie: jwt_decode(subUser)}.userCookie._id

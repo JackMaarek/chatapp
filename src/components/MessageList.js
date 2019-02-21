@@ -24,7 +24,7 @@ class MessageList extends React.Component {
           }).then(function (res) {
             //Update message & date arrays map
             for( let item of res.rows ){
-              ordinatedData.push({ _id: item.id, content: item.doc.content.value, date: item.doc.date })
+              ordinatedData.push({ _id: item.id, content: item.doc.content.value, date: item.doc.date , name: item.doc.name })
             }
             
             //Update state for constructor
@@ -54,7 +54,7 @@ class MessageList extends React.Component {
           //Map message & date arrays
 
           for( let item of res.rows ){
-            ordinatedData.push({ _id: item.id, content: item.doc.content.value, date: item.doc.date })
+            ordinatedData.push({ _id: item.id, content: item.doc.content.value, date: item.doc.date, name: item.doc.name })
           }
           console.log('component mounted', ordinatedData)
 
@@ -91,6 +91,7 @@ class MessageList extends React.Component {
                     <div key={index + 1}>
                       <li>
                       {item.date}
+                      <p>{item.name}</p>
                       <p>{item.content}</p>
                       </li>
                       
