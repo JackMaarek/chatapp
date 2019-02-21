@@ -70,23 +70,14 @@ class MessageList extends React.Component {
     }
   
     render() { 
-      let listItem 
-      let dateItem 
-      let ordinatedList
 
-         /*  //map all Messages in listItem
-      listItem = this.state.messages.map((message, indexOne)=>{
-        return <li className="messageList" key={indexOne}>{message}</li> 
-        });
-          //map all Dates in dateItem
-      dateItem = this.state.date.map((date, indexTwo)=>{
-        return <li className="dateList" key={indexTwo}>{date}</li> 
-      });*/
+      let ordinatedList
 
       console.log('ordiinated data', this.state.ordinatedData)
       ordinatedList = this.state.ordinatedData.sort((timeA ,timeB)=>{
-        
+        console.log(new Date(timeA.date).getTime() - new Date(timeB.date).getTime());
         return new Date(timeA.date).getTime() - new Date(timeB.date).getTime()
+
       });
       console.log('>>>>>', ordinatedList)
       
@@ -94,8 +85,6 @@ class MessageList extends React.Component {
             <div className="message-list">
                 <div className="help-text">MessageList</div>
                 <ul>
-                  {listItem}
-                  {dateItem}
                   {ordinatedList.map((item, index) => {
                     console.log('salope', item)
                     return (

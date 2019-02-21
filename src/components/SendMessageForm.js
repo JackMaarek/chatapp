@@ -1,15 +1,14 @@
 import React from 'react'
 import { db, remotedb } from '../dbconfig'
+import jwt_decode from '../../node_modules/jwt-decode'
 
 class SendMessageForm extends React.Component {
 
     constructor() {
         super();
-        var userCookie = document.cookie
-        console.log(userCookie);
-
         this.state = {
-          value: ''
+          value: '',
+          userCookie:''
         };
         //Bind values on change && submit
         this.handleChange = this.handleChange.bind(this);
@@ -21,7 +20,6 @@ class SendMessageForm extends React.Component {
         this.setState({ 
           value: event.target.value}
           );}
-
 
         //Handle onSubmit of the input
       handleSubmit(event){
@@ -45,18 +43,27 @@ class SendMessageForm extends React.Component {
           if (mm < 10) {
             mm = '0' + mm;
           }
-          
+        
           creation =  h + 'h ' + mn + 'mn ' + s + 's ' + ms + 'ms ' + dd + '/' + mm + '/' + yyyy ;
-          console.log(creation)
           return creation
         }
+
+        var userToken = document.cookie
+        var subUser = userToken.substring(11);
+        console.log(subUser);
+        this.setState({
+          userCookie: jwt_decode(subUser)
+        })
+        
+        console.log('COOOKIE',{userCookie: jwt_decode(subUser)}.userCookie._id);
+        
 
         //Data
         var message = {
           "id": 'message',
           "content": {value: this.state.value},
           "date": mydate(),
-          "user":"jacko"
+          "user":{userCookie: jwt_decode(subUser)}.userCookie._id
         };
 
           if({value: this.state.value}.value!==''){
