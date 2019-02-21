@@ -17,7 +17,7 @@ Definition
         constructor(){}
 
         routes(){
-            // Update
+            // Create a User
             authRouter.post( '/register', (req, res) => {
                 // Error: no body present
                 if (typeof req.body === 'undefined' || req.body === null) { 
@@ -37,7 +37,7 @@ Definition
                 }
             })
 
-            // Delete
+            // User Login
             authRouter.post( '/login', (req, res) => {
                 // Error: no body present
                 if (typeof req.body === 'undefined' || req.body === null) { 
