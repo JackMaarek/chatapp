@@ -9,10 +9,6 @@ import NewRoomForm from './components/NewRoomForm';
 import Login from './components/Login';
 import Register from './components/Register';
 import Logout from './components/Logout'
-import { remotedb } from "./dbconfig";
-import IdentificationSignin from './components/Identification/IdentificationSignin/IdentificationSignin';
-import IdentificationSignup from './components/Identification/IdentificationSignup/IdentificationSignup';
-import Dashboard from './components/Dashboard/Dashboard';
 import IdentificationSignin from './components/Identification/IdentificationSignin/IdentificationSignin';
 import IdentificationSignup from './components/Identification/IdentificationSignup/IdentificationSignup';
 import Dashboard from './components/Dashboard/Dashboard';
