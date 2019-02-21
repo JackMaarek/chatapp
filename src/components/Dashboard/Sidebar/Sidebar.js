@@ -8,7 +8,7 @@ import SidebarListItemUser from './SidebarList/SidebarListItemUser/SidebarListIt
 class Sidebar extends Component {
   render() {
     return (
-      <div>
+      <div className='sidebar'>
         <SidebarHeader />
         <SidebarList title='Chaînes'>
           {/* Boucle on rooms */}

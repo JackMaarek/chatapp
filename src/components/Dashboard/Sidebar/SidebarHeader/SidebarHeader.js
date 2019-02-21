@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class SidebarHeader extends Component {
   render() {
     return (
-      <div>
+      <div className='sidebar__header'>
         Sidebar header
       </div>
     );
