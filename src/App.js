@@ -20,13 +20,8 @@ class App extends React.Component {
 
             messages : []
         }
-    
     }
-
-
     render() {
-
-        
 
       console.log(remotedb);
         return (
