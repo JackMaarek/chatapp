@@ -1,3 +1,119 @@
-* {
-  color: $sidebar_blue;
+.identification {
+  width: 100vw;
+  height: 100vh;
+  background: #3A81B8;
+  position: relative;
+}
+
+.identification__block  {
+  position: absolute;
+  display: flex;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 80%;
+  height: 80%;
+  max-width: 940px;
+}
+
+.identification__block__left-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% / 3);
+  height: 100%;
+  background: #D6EBF5;
+  border-radius: 8px 0 0 8px;
+}
+
+.identification__block__left-side img  {
+  width: 100px;
+}
+
+.identification__block__right-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc((100% / 3) * 2);
+  height: 100%;
+  background: #045989;
+  border-radius: 0 8px 8px 0;
+  padding: 50px;
+}
+
+.identification__block__right-side__content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.identification__block__right-side__content h1 {
+  text-align: center;
+  width: 100%;
+  font-weight: 700;
+  font-size: 26px;
+  color: #fff;
+  margin-bottom: 50px;
+}
+
+.identification__block__right-side__content form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.identification__block__right-side__content form label {
+  width: 100%;
+  display: block;
+  font-size: 18px;
+  color: #D6EBF5;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.identification__block__right-side__content form input {
+  width: 100%;
+  height: 45px;
+  padding: 10px;
+  margin-bottom: 50px;
+  background: #D6EBF5;
+  color: #003D5F;
+  border-radius: 4px;
+}
+
+.identification__block__right-side__content form input::placeholder {
+  color: #6F90A3;
+}
+
+.identification__block__right-side__content form button {
+  width: 100%;
+  height: 45px;
+  background: #73C5E5;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .identification__block__left-side {
+    display: none;
+  }
+
+  .identification__block__right-side {
+    width: 100%;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 500px) {
+  .identification__block {
+    width: 100%;
+    height: 100%;
+  }
 }

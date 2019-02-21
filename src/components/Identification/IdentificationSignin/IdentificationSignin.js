@@ -1,5 +1,6 @@
 import React from 'react'
-import { db, remotedb } from '../../../dbconfig'
+
+import Identification from '../Indentification'
 
 class IdentificationSignin extends React.Component {  
     
@@ -28,28 +29,30 @@ class IdentificationSignin extends React.Component {
 
     render() {
         return (
-            <div className="LoginForm">
-            <form className="send-login-form">
-                <label htmlFor="email">Email</label>
-                <input 
-                onChange={this.handleEmailChange}
-                value={this.state.value}
-                type='email' 
-                name="email" 
-                placeholder="email"
-                />
+            <Identification title='SE CONNECTER'>
+                <form className="send-login-form">
+                    <label htmlFor="email">EMAIL</label>
+                    <input 
+                    onChange={this.handleEmailChange}
+                    value={this.state.value}
+                    type='email' 
+                    name="email" 
+                    placeholder="email"
+                    />
 
-                <label htmlFor="pwd">Password</label>
-                <input 
-                onChange={this.handlePasswordChange}
-                value={this.state.value}
-                type='password' 
-                name="pwd" 
-                placeholder="password"
-                />
+                    <label htmlFor="pwd">MOT DE PASSE</label>
+                    <input 
+                    onChange={this.handlePasswordChange}
+                    value={this.state.value}
+                    type='password' 
+                    name="pwd" 
+                    placeholder="password"
+                    />
 
-            </form>
-            </div>
+                    <button type="submit">CONNEXION</button>
+
+                </form>
+            </Identification>
         )
     }
 }

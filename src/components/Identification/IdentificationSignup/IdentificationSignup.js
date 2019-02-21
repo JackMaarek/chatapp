@@ -1,5 +1,6 @@
 import React from 'react'
 import { db, remotedb } from '../../../dbconfig'
+
 import Indentification from '../Indentification';
 
 class IdentificationSignup extends React.Component {  
@@ -33,7 +34,7 @@ class IdentificationSignup extends React.Component {
 
     render() {
         return (
-          <Indentification>
+          <Indentification title='CRÉER UN COMPTE'>
             <div className="LoginForm">
               <form className="send-login-form">
                   <label htmlFor="email">Email</label>
