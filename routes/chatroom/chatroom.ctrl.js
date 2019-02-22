@@ -13,11 +13,12 @@ Méthodes CRUD
     const createItem = (body) => {
         return new Promise( (resolve, reject) => {
             // Look for used chatroom by slug
-            ChatRoomModel.findOne( { slug: body.slug }, ( error, chatroom ) => {
+            ChatRoomModel.findOne( { title: body.title }, ( error, chatroom ) => {
                 if(error) return reject(error) // Mongo Error
                 else if(chatroom) return reject('chatroom already exist')
                 else {
                     ChatRoomModel.create(body)
+                    // res.cookie('hetic-room',ChatRoomModel)
                     .then( mongoResponse => resolve(mongoResponse) )
                     .catch( mongoResponse => reject(mongoResponse) )
                 }
@@ -25,9 +26,21 @@ Méthodes CRUD
         });
     };
 
-    const readItem = () => {
-        
-    }
+    const enterChatRoom = (body, res) => {
+        return new Promise( (resolve, reject) => {
+            // Search chatroom by title
+             ChatRoomModel.findOne( {title: body.title}, (error, chatroom) =>{
+                if(error) reject(error) // Mongo error
+                else if(!chatroom) reject('Unknow chatroom')
+                else{
+                        // Set cookie
+                        res.cookie( 'hetic-room', chatroom.title )
+
+                        return resolve(chatroom);
+                };
+            });
+        });
+    };
 
     const updateItem = () => {
 
@@ -43,7 +56,7 @@ Exports
 */
     module.exports = {
         createItem,
-        readItem,
+        enterChatRoom,
         updateItem,
         deleteItem
     }
