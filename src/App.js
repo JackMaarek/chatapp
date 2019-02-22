@@ -2,8 +2,6 @@ import React from 'react';
 import { remotedb } from "./dbconfig";
 import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 
-import RoomList from './components/RoomList';
-import NewRoomForm from './components/NewRoomForm';
 import IdentificationSignin from './components/Identification/IdentificationSignin/IdentificationSignin';
 import IdentificationSignup from './components/Identification/IdentificationSignup/IdentificationSignup';
 import Dashboard from './components/Dashboard/Dashboard';

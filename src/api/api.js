@@ -24,7 +24,6 @@ export function login(userData) {
 
 }
 
-
 export function logout(){
     console.log('ouioui tu clik sur le bouton')
     axios.post(`${api}/api/auth/logout`)

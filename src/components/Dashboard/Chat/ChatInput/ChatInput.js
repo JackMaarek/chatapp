@@ -1,6 +1,6 @@
 import React from 'react'
 import { db, remotedb } from '../../../../dbconfig'
-import jwt_decode from './../../../../../node_modules/jwt-decode'
+import jwt_decode from '../../../../../node_modules/jwt-decode'
 
 class ChatInput extends React.Component {
 
@@ -26,7 +26,7 @@ class ChatInput extends React.Component {
         event.preventDefault();
       
 
-        let mydate = ()=> {
+        /*let mydate = ()=>{
           var creation = new Date();
           var dd = creation.getDate();
           var mm = creation.getMonth() + 1; 
@@ -46,7 +46,8 @@ class ChatInput extends React.Component {
         
           creation =  h + 'h ' + mn + 'mn ' + s + 's ' + ms + 'ms ' + dd + '/' + mm + '/' + yyyy ;
           return creation
-        }
+        }*/
+      
 
         var userToken = document.cookie
         var subUser = userToken.substring(11);
@@ -55,7 +56,7 @@ class ChatInput extends React.Component {
           userCookie: jwt_decode(subUser)
         })
         
-        console.log('COOOKIE',{userCookie: jwt_decode(subUser)}.userCookie._id);
+        console.log('COOOKIE',{userCookie: jwt_decode(subUser)}.userCookie.name);
         
 
         //Data
@@ -63,9 +64,10 @@ class ChatInput extends React.Component {
           "id": 'message',
           "name": {userCookie: jwt_decode(subUser)}.userCookie.name,
           "content": {value: this.state.value},
-          "date": mydate(),
+          "date": new Date(),
           "user":{userCookie: jwt_decode(subUser)}.userCookie._id
         };
+        console.log('MESSAGE',message);
 
           if({value: this.state.value}.value!==''){
             console.log({value: this.state.value}.value);
@@ -83,9 +85,10 @@ class ChatInput extends React.Component {
                 <input
                     onChange={this.handleChange}
                     value={this.state.value}
-                    placeholder="Envoyez un message..."
+                    placeholder="Send Your Message"
                     type="text" 
                     />
+                    
             </form>
         )
     }

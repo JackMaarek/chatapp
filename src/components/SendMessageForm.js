@@ -26,7 +26,7 @@ class SendMessageForm extends React.Component {
         event.preventDefault();
       
 
-        let mydate = ()=> {
+        /*let mydate = ()=>{
           var creation = new Date();
           var dd = creation.getDate();
           var mm = creation.getMonth() + 1; 
@@ -46,7 +46,8 @@ class SendMessageForm extends React.Component {
         
           creation =  h + 'h ' + mn + 'mn ' + s + 's ' + ms + 'ms ' + dd + '/' + mm + '/' + yyyy ;
           return creation
-        }
+        }*/
+      
 
         var userToken = document.cookie
         var subUser = userToken.substring(11);
@@ -63,9 +64,10 @@ class SendMessageForm extends React.Component {
           "id": 'message',
           "name": {userCookie: jwt_decode(subUser)}.userCookie.name,
           "content": {value: this.state.value},
-          "date": mydate(),
+          "date": new Date(),
           "user":{userCookie: jwt_decode(subUser)}.userCookie._id
         };
+        console.log('MESSAGE',message);
 
           if({value: this.state.value}.value!==''){
             console.log({value: this.state.value}.value);
@@ -86,6 +88,7 @@ class SendMessageForm extends React.Component {
                     placeholder="Send Your Message"
                     type="text" 
                     />
+                    
             </form>
         )
     }
