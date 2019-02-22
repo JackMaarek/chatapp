@@ -26,7 +26,7 @@ class SendMessageForm extends React.Component {
         event.preventDefault();
       
 
-        let mydate = ()=>{
+        let mydate = ()=> {
           var creation = new Date();
           var dd = creation.getDate();
           var mm = creation.getMonth() + 1; 

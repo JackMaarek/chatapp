@@ -1,0 +1,22 @@
+.send-message-form {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  bottom: 0;
+  background: #002A42;
+  width: calc((100% / 5) * 4);
+  padding: 20px;
+}
+
+.send-message-form input {
+  background: #10425F;
+  color: #D6EBF5;
+  height: 40px;
+  border-radius: 4px;
+  width: 100%;
+  padding-left: 20px;
+}
+
+.send-message-form input::placeholder {
+  color: #D6EBF5;
+}

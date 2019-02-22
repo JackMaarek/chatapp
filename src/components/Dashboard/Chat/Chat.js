@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
+
 import MessageList from '../../MessageList';
+
+import ChatHeader from './ChatHeader/ChatHeader'
+import ChatInput from './ChatInput/ChatInput'
 
 class Chat extends Component {
   render() {
+    const chatTitle = 'Stack MEAN team'
     return (
-      <div>
+      <div className='chat'>
+        <ChatHeader title={chatTitle} />
         <MessageList />
+        <ChatInput />
       </div>
     );
   }
