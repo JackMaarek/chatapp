@@ -32,7 +32,12 @@
   justify-content: space-between;
  }
 
-.chat__item-message__header span {
+ .chat__item-message__content {
+   display: flex;
+   align-items: center;
+ }
+
+.chat__item-message span {
   font-size: 10px;
   color: #fff;
   padding: 5px;
