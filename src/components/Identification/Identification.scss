@@ -101,6 +101,10 @@
   cursor: pointer;
 }
 
+.identification__submit-button {
+  width: 100%;
+}
+
 @media (max-width: 800px) {
   .identification__block__left-side {
     display: none;

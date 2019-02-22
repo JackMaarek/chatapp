@@ -90,7 +90,7 @@ class IdentificationSignup extends React.Component {
                     placeholder="Confirmez le mot de passe"
                   />
 
-                  <button type="submit">S'INSCRIRE</button>
+                  <Link className='identification__submit-button' to=''><button type="submit">S'INSCRIRE</button></Link>
                   <p className='identification__text'>En vous inscrivant, vous acceptez les Conditions Générales.</p>
                   <div className='identification__signup__separator'></div>
                   <p className='identification__text'>Vous avez déjà un compte ? <Link to='signin'>Se connecter</Link></p>
