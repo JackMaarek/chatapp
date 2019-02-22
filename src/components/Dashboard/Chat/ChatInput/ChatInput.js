@@ -94,5 +94,4 @@ class ChatInput extends React.Component {
     }
 }
 
-
 export default ChatInput

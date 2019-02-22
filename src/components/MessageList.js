@@ -1,6 +1,8 @@
 import React from 'react'
 import { db, remotedb } from '../dbconfig'
 
+import ChatItemMessage from './Dashboard/Chat/ChatItemMessage/ChatMainItemMessage'
+
 class MessageList extends React.Component {
     constructor(props){
       super(props)
@@ -84,15 +86,15 @@ class MessageList extends React.Component {
       
         return (
             <div className="message-list">
-                <div className="help-text">MessageList</div>
                 <ul>
                   {ordinatedData.map((item, index) => {
                     return (
                     <div key={item._id}>
                       <li>
-                      {item.date}
+                        <ChatItemMessage date={item.date} name={item.name} content={item.content} />
+                      {/* {item.date}
                       <p>{item.name}</p>
-                      <p>{item.content}</p>
+                      <p>{item.content}</p> */}
                       </li>
                       
                     </div>
