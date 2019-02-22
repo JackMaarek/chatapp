@@ -74,6 +74,8 @@ class MessageList extends React.Component {
        ordinatedData.sort((messageA ,messageB)=>{
         const timATimestamp = (new Date(messageA.date)).getTime();
         const timBTimestamp = (new Date(messageB.date)).getTime();
+        console.log(timATimestamp)
+        console.log(timBTimestamp)
         if(timATimestamp > timBTimestamp){
           return 1
         }
