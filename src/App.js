@@ -20,14 +20,8 @@ class App extends React.Component {
         return (
             <div className="app">
                 {/* <RoomList />
-                <MessageList />
-                <div className="modal">
-                <Login />
-                <Register />
-                </div>
-                <SendMessageForm />
                 <NewRoomForm />
-                <Logout/>          */}
+                */}
                 <Router>
                     <Switch>
                         <Route path='/signin' component={IdentificationSignin} />
