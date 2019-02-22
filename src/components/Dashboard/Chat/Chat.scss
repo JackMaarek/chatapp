@@ -23,27 +23,26 @@
 }
 
 .chat__item-message {
-  width: 75%;
-  padding: 20px;
+  display: flex;
 }
 
-.chat__item-message__header {
-  display: flex;
-  justify-content: space-between;
- }
+.chat__item-message__container {
+  width: 75%;
+  padding: 10px;
+}
 
- .chat__item-message__content {
+.chat__item-message__container__content {
    display: flex;
    align-items: center;
  }
 
-.chat__item-message span {
+.chat__item-message__container span {
   font-size: 10px;
   color: #fff;
   padding: 5px;
  }
 
-.chat__item-message p {
+.chat__item-message__container p {
   display: inline-block;
   max-width: 75%;
   overflow-wrap: break-word;
@@ -53,11 +52,20 @@
   padding: 10px;
 }
 
+.chat__item-message.is-user-message {
+  justify-content: flex-end;
+}
 
-.chat__item-message--myself p {
-  background: #FFFFFF;
+
+.chat__item-message.is-user-message .chat__item-message__container__header {
+  display: none;
+}
+
+.chat__item-message.is-user-message .chat__item-message__container__content {
+  flex-direction: row-reverse;
+}
+
+.chat__item-message.is-user-message p {
+  background: #fff;
   color: #3A81B8;
-  border-radius: 4px;
-  padding: 10px;
-
- }
+}
