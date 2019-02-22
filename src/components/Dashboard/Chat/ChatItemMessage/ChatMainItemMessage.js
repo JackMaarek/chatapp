@@ -1,6 +1,25 @@
 import React, { Component } from 'react';
+import { db, remotedb } from '../../../../dbconfig';
+import jwt_decode from '../../../../../node_modules/jwt-decode';
 
 class ChatMainItemMessage extends Component {
+  constructor() {
+    super();
+    this.state = {
+      value: '',
+      userCookie:''
+    };
+  
+  
+  var userToken = document.cookie
+  var subUser = userToken.substring(11);
+  console.log(subUser);
+  this.setState({
+    userCookie: jwt_decode(subUser)
+  })
+  console.log('COOKIE',{userCookie: jwt_decode(subUser)}.userCookie._id)
+  }
+
   render() {
     const { date, name, content } = this.props
     const isUser = false

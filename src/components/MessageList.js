@@ -91,7 +91,7 @@ class MessageList extends React.Component {
                     return (
                     <div key={item._id}>
                       <li>
-                        <ChatItemMessage date={item.date} name={item.name} content={item.content} />
+                        <ChatItemMessage date={item.date} name={item.name} content={item.content} _id={item._id} />
                       {/* {item.date}
                       <p>{item.name}</p>
                       <p>{item.content}</p> */}
