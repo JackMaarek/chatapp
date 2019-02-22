@@ -9,3 +9,5 @@ body {
 
 @import './../components/Dashboard/Dashboard.scss';
 @import './../components/Dashboard/Sidebar/Sidebar.scss';
+@import './../components/Dashboard/Chat/Chat.scss';
+@import './../components/Dashboard/Chat/ChatInput/ChatInput.scss';
