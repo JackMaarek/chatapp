@@ -7,7 +7,7 @@ class Dashboard extends Component {
     const { messages } = this.props
     return (
       <div className='dashboard'>
-        <Sidebar />
+        {/* <Sidebar /> */}
         <Chat messages={messages} />
       </div>
     );

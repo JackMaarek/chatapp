@@ -1,5 +1,7 @@
 import React from 'react'
-import {logout} from '../api/api'
+import { logout } from '../../../../api/api'
+
+import LogoutIcon from './../../../../assets/logout-icon.png'
 
 class Logout extends React.Component {  
    
@@ -11,7 +13,7 @@ class Logout extends React.Component {
       
       render() {
           return (
-            <button onClick={this.handleLogout.bind(this)}>Logout</button>
+            <button onClick={this.handleLogout.bind(this)}><img src={LogoutIcon} alt='logout'/></button>
           )
       }
 }

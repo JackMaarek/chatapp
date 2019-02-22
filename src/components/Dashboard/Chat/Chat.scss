@@ -1,6 +1,6 @@
 .chat {
   position: relative;
-  width: calc((100% / 5) * 4);
+  width: 100%;
   background: #003D5F;
   overflow-y: scroll;
   padding: 90px 0;
@@ -10,16 +10,25 @@
   position: fixed;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   top: 0;
   width: 100%;
   height: 80px;
   background: #002A42;
+  padding: 20px;
 }
 
 .chat__header h1 {
-  padding-left: 20px;
   color: #73C5E5;
   font-size: 22px;
+}
+
+.chat__header button {
+  cursor: pointer;
+}
+
+.chat__header img {
+  width: 15px;
 }
 
 .chat__item-message {
