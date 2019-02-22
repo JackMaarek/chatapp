@@ -12,7 +12,7 @@ export function register(userData){
     })
 }
 
-export function login(userData){
+export function login(userData) {
     console.log(userData)
     axios.post(`${api}/api/auth/login`, userData)
     .then(function (response) {

@@ -36,7 +36,7 @@ class IdentificationSignin extends React.Component {
             this.setState({ email: this.state.email });
             this.setState({ password: this.state.password });
             login({email: this.state.email, password: this.state.password });
-        }
+            }
 
     render() {
         return (
@@ -60,7 +60,7 @@ class IdentificationSignin extends React.Component {
                     placeholder="Mot de passe"
                     />
 
-                    <button type="submit">CONNEXION</button>
+                    <Link className='identification__submit-button' to=''><button type="submit">CONNEXION</button></Link>
                     <p className='identification__text'>Pas encore de compte ? <Link to='signup'>Créer mon compte</Link></p>
 
                 </form>
