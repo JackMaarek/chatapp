@@ -52,6 +52,7 @@
  }
 
 .chat__item-message__container p {
+  font-size: 14px;
   display: inline-block;
   max-width: 75%;
   overflow-wrap: break-word;
@@ -60,6 +61,13 @@
   border-radius: 4px;
   padding: 10px;
 }
+
+@media (max-width: 550px) {
+  .chat__item-message__container p {
+    max-width: 95%;
+  }
+}
+
 
 .chat__item-message.is-user-message {
   justify-content: flex-end;
